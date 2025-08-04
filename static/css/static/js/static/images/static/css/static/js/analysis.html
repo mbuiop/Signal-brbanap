@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card shadow-lg rounded-4">
+    <div class="card-header bg-success text-white">
+        <h3 class="card-title"><i class="fas fa-coins"></i> تحلیل تکنیکال ارزها</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {% for analysis in analyses %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm rounded-3">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="card-title">{{ analysis.indicator }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="badge bg-primary rounded-pill">مقدار: {{ analysis.value }}</span>
+                        </div>
+                        <p class="card-text">{{ analysis.analysis }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="mt-4">
+            <div class="card">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="card-title">نمودار تحلیل تکنیکال</h5>
+                </div>
+                <div class="card-body text-center">
+                    <img src="https://via.placeholder.com/800x400?text=Technical+Analysis+Chart" alt="تحلیل تکنیکال" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
