@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-lg rounded-4">
+            <div class="card-header bg-warning text-dark">
+                <h3 class="card-title"><i class="fas fa-plus-circle"></i> فرم ثبت آگهی جدید</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">عنوان آگهی</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">توضیحات</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="price" class="form-label">قیمت (تومان)</label>
+                        <input type="text" class="form-control" id="price" name="price" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="contact" class="form-label">اطلاعات تماس</label>
+                        <input type="text" class="form-control" id="contact" name="contact" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="image" class="form-label">عکس آگهی</label>
+                        <input class="form-control" type="file" id="image" name="image" accept="image/*" required>
+                        <div class="form-text">فرمت‌های مجاز: JPG, PNG, GIF</div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill">
+                            <i class="fas fa-paper-plane"></i> ثبت آگهی
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
