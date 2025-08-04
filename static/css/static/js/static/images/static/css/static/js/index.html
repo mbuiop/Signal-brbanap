@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row text-center">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 shadow-lg rounded-4">
+            <div class="card-body">
+                <i class="fas fa-chart-line fa-4x text-primary mb-3"></i>
+                <h3 class="card-title">سیگنال‌های معاملاتی</h3>
+                <p class="card-text">سیگنال‌های دقیق برای معاملات ارزهای دیجیتال</p>
+                <a href="{{ url_for('signals') }}" class="btn btn-primary btn-lg rounded-pill">مشاهده سیگنال‌ها</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 shadow-lg rounded-4">
+            <div class="card-body">
+                <i class="fas fa-coins fa-4x text-success mb-3"></i>
+                <h3 class="card-title">تحلیل تکنیکال ارزها</h3>
+                <p class="card-text">تحلیل‌های حرفه‌ای با اندیکاتورهای پیشرفته</p>
+                <a href="{{ url_for('analysis') }}" class="btn btn-success btn-lg rounded-pill">مشاهده تحلیل‌ها</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 shadow-lg rounded-4">
+            <div class="card-body">
+                <i class="fas fa-plus-circle fa-4x text-warning mb-3"></i>
+                <h3 class="card-title">ثبت آگهی جدید</h3>
+                <p class="card-text">ثبت آگهی خرید و فروش ارزهای دیجیتال</p>
+                <a href="{{ url_for('new_ad') }}" class="btn btn-warning btn-lg rounded-pill">ثبت آگهی</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 shadow-lg rounded-4">
+            <div class="card-body">
+                <i class="fas fa-list fa-4x text-info mb-3"></i>
+                <h3 class="card-title">آگهی‌های موجود</h3>
+                <p class="card-text">مشاهده لیست آگهی‌های خرید و فروش</p>
+                <a href="{{ url_for('ads_list') }}" class="btn btn-info btn-lg rounded-pill">مشاهده آگهی‌ها</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
