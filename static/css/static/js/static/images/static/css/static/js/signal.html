@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card shadow-lg rounded-4">
+    <div class="card-header bg-primary text-white">
+        <h3 class="card-title"><i class="fas fa-chart-line"></i> سیگنال‌های معاملاتی</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>جفت ارز</th>
+                        <th>جهت</th>
+                        <th>قیمت فعلی</th>
+                        <th>هدف</th>
+                        <th>حد ضرر</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for signal in signals %}
+                    <tr>
+                        <td>{{ signal.pair }}</td>
+                        <td>
+                            {% if signal.direction == 'BUY' %}
+                                <span class="badge bg-success">خرید</span>
+                            {% else %}
+                                <span class="badge bg-danger">فروش</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ signal.price }}</td>
+                        <td>{{ signal.target }}</td>
+                        <td>{{ signal.stop_loss }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
